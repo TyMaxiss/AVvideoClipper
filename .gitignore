@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+packaging/ffmpeg/
+*_clean*.mp4
+*_clean*.avi

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "avclipper"
+dynamic = ["version"]
+description = "Automatically removes analog white noise (snow) from AV video recordings"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.22",
+    "PySide6-Essentials>=6.5",
+    "imageio-ffmpeg>=0.4.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+avclipper-cli = "avclipper.cli:main"
+
+[project.gui-scripts]
+avclipper = "avclipper.gui.app:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "avclipper.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["avclipper*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["gui: tests that open the Qt window (offscreen)"]
