@@ -74,4 +74,16 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
+          name: AV Video Clipper ${{ github.ref_name }}
           files: AVvideoClipper-windows.zip
+          body: |
+            Программа вырезает из AV-видеозаписей белый шум («снег») и оставляет только видео.
+
+            **Как запустить (Windows 10/11, 64 бит)**
+            1. Скачайте `AVvideoClipper-windows.zip` в разделе Assets ниже.
+            2. Распакуйте архив в любую папку.
+            3. Запустите `AVvideoClipper\AVvideoClipper.exe`. Устанавливать ничего не нужно, ffmpeg уже внутри.
+
+            Если Windows SmartScreen предупредит о неизвестном издателе, нажмите «Подробнее» → «Выполнить в любом случае».
+
+            Подробная инструкция: [README](https://github.com/${{ github.repository }}/blob/${{ github.ref_name }}/README.md).
